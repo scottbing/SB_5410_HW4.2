@@ -41,22 +41,22 @@ def bfs_shortest_path(graph, start, goal):
 
 
 def main():
-    graph = {"Omaha"        : ["Dallas", "Houston"],
+    graph = {"Omaha"        : ["Dallas", "Houston", "Chicago"],
              "Louisville"   : ["Dallas", "Houston", "Baltimore", "Chicago"],
-             "Baltimore"    : ["Jacksonville", "Houston", "Dallas", "Chicago"],
+             "Baltimore"    : ["Jacksonville", "Louisville", "Houston", "Dallas", "Chicago"],
              "Portland"     : ["Baltimore"],
              "Jacksonville" : ["Dallas", "Houston", "Baltimore", "Chicago"],
              "Belize City" :  [],
              "Dallas"  	    : ["Houston", "Baltimore", "Jacksonville", "Louisville", "Chicago", "Omaha"],
              "Houston"  	: ["Dallas" ,  "Baltimore", "Jacksonville", "Louisville", "Chicago", "Omaha"],
-             "Chicago"		: ["Dallas",  "Baltimore", "Jacksonville", "Louisville", "Omaha"]
+             "Chicago"		: ["Dallas",  "Baltimore", "Jacksonville", "Louisville", "Omaha", "Houston"]
              }
 
     path=bfs_shortest_path(graph, 'Omaha', 'Louisville')
     print("From Omaha to Louisville: " + str(path))
 
     path1 = bfs_shortest_path(graph, 'Baltimore', 'Jacksonville')
-    print("From Baltimore to Jacksonville: " + str(path1))
+    #print("From Baltimore to Jacksonville: " + str(path1))
 
     path2 = bfs_shortest_path(graph, 'Jacksonville', 'Portland')
     print("From Baltimore to Jacksonville: " + str(path1) + " to Portland, Maine: " + str(path2))
